@@ -1,12 +1,34 @@
 package Collections;
 
+import java.util.Random;
+
 public class CollectionMain {
 
     public static void main(String[] args) {
         // testQueue();
         // testStack();
         // testLinkedList();
-        testDoubleLinkedList();
+        // testDoubleLinkedList();
+        testBinaryTree();
+    }
+
+    private static void testBinaryTree() {
+        var tree = new BinaryTree();
+
+        Random r = new Random();
+
+        for(int i = 0; i < 100; i++){
+            tree.add(r.nextInt(1000));
+        }
+
+        System.out.println("In-Order-Traversal: \n");
+        tree.traverseInOrder();
+
+        System.out.println("\nPre-Order-Traversal: \n");
+        tree.traversePreOrder();
+
+        System.out.println("\nPost-Order-Traversal: \n");
+        tree.traversePostOrder();
     }
 
     private static void testDoubleLinkedList() {
