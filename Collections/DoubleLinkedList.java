@@ -37,16 +37,16 @@ public class DoubleLinkedList<T> {
     public void remove(T key){
         var selectedNode = first;
 
-        if (first.data == key){
+        if (first.data.equals(key)){
             first = first.next;
             first.prev = null;
             return;
-        } else if (last.data == key){
+        } else if (last.data.equals(key)){
             last = last.prev;
             last.next = null;
         }
 
-        while(selectedNode.data != key) selectedNode = selectedNode.next;
+        while(!selectedNode.data.equals(key)) selectedNode = selectedNode.next;
         selectedNode.next.prev = selectedNode.prev;
         selectedNode.prev.next = selectedNode.next;
         size--;
@@ -74,7 +74,7 @@ public class DoubleLinkedList<T> {
         var indexNode = first;
 
         while (indexNode != null){
-            if (indexNode.data == data) return true;
+            if (indexNode.data.equals(data)) return true;
             indexNode = indexNode.next;
         }
         return false;

@@ -44,12 +44,12 @@ public class LinkedList <T> {
     public void remove(T key){
         var prevNode = first;
 
-        if (first.data == key){
+        if (first.data.equals(key)){
             first = first.next;
             return;
         }
 
-        while(prevNode.next.data != key) prevNode = prevNode.next;
+        while(!prevNode.next.data.equals(key)) prevNode = prevNode.next;
         prevNode.next = prevNode.next.next;
         size--;
     }
@@ -66,7 +66,7 @@ public class LinkedList <T> {
         var indexNode = first;
 
         while (indexNode != null){
-            if (indexNode.data == data) return true;
+            if (indexNode.data.equals(data)) return true;
             indexNode = indexNode.next;
         }
         return false;
