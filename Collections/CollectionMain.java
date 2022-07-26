@@ -4,7 +4,41 @@ public class CollectionMain {
 
     public static void main(String[] args) {
         // testQueue();
-        testStack();
+        // testStack();
+        // testLinkedList();
+    }
+
+    private static void testLinkedList() {
+        var linkedList = new LinkedList<String>();
+
+        linkedList.add("Hello");
+        linkedList.add("there!");
+        linkedList.add("It's");
+        linkedList.add("so");
+        linkedList.add("nice");
+        linkedList.add("to meet you!");
+
+        var size = linkedList.size();
+        for(int i = 0; i < size; i++){
+            System.out.println(linkedList.get(i));
+        }
+
+        System.out.println();
+
+        linkedList.remove("so");
+        linkedList.remove(1);
+        size = linkedList.size();
+        for (int i = 0; i < size; i++){
+            System.out.println(linkedList.get(i));
+        }
+
+        System.out.println();
+
+        linkedList.insert("Mf!", 2);
+        size = linkedList.size();
+        for (int i = 0; i < size; i++){
+            System.out.println(linkedList.get(i));
+        }
     }
 
     private static void testStack(){
