@@ -37,11 +37,29 @@ public class BinaryTree<T> {
     }
 
     public void remove(T key){
-        
+        if (root == null) return;
+        remove(root, key);
     }
 
-    private void remove(Node<T> currentNode, Node<T> selectedNode){
+    private Node<T> remove(Node<T> currentNode, T selectedNode){
+        var compareToResult = ((Comparable) currentNode.data).compareTo(selectedNode);
 
+        if (compareToResult < 0){
+            currentNode.right = remove(currentNode.right, selectedNode);
+        } else if (compareToResult > 0) {
+            currentNode.left = remove(currentNode.left, selectedNode);
+        } else {
+            // correct node
+            if (currentNode.left == null) return currentNode.right;
+            if (currentNode.right == null) return currentNode.left;
+            // need to find the most-less value on the right side
+            var traverseNode = currentNode.right;
+            while (traverseNode.left != null) traverseNode = traverseNode.left;
+            currentNode.data = traverseNode.data;
+            remove(currentNode.right, traverseNode.data);
+        }
+
+        return currentNode;
     }
 
     public void traverseInOrder(){

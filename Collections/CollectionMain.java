@@ -9,7 +9,42 @@ public class CollectionMain {
         // testStack();
         // testLinkedList();
         // testDoubleLinkedList();
-        testBinaryTree();
+        // testBinaryTree();
+        testBinaryRemove();
+    }
+
+    private static void testBinaryRemove() {
+        var tree = new BinaryTree<Integer>();
+
+        tree.add(50);
+        tree.add(48);
+        tree.add(70);
+        tree.add(65);
+        tree.add(67);
+        tree.add(66);
+        tree.add(67);
+        tree.add(90);
+        tree.add(69);
+        tree.add(98);
+        tree.add(94);
+        tree.add(99);
+        tree.add(30);
+        tree.add(32);
+        tree.add(35);
+        tree.add(31);
+        tree.add(20);
+        tree.add(15);
+        tree.add(25);
+        tree.add(27);
+
+        System.out.println("Before removing:");
+        tree.traverseInOrder();
+
+        tree.remove(30);
+        tree.remove(90);
+
+        System.out.println("\nAfter removing:");
+        tree.traverseInOrder();
     }
 
     private static void testBinaryTree() {

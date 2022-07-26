@@ -1,7 +1,5 @@
 package Collections;
 
-import javax.swing.JButton;
-
 public class LinkedList <T> {
 
     private Node<T> first;
