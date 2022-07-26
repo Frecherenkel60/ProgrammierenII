@@ -9,7 +9,7 @@ public class Stack<T> {
         var newNode = new Node<T>(data);
         size++;
 
-        if (top == null){
+        if (top != null){
             newNode.prev = top;
         }
         
@@ -18,11 +18,16 @@ public class Stack<T> {
     }
 
     public T pop(){
-        return null;
+        if (top == null) return null;
+        return top.data;
     }
 
     public T peek(){
-        return null;
+        if (top == null) return null;
+        
+        var returningNode = top;
+        top = top.prev;
+        return returningNode.data;
     }
 
     public int size(){
