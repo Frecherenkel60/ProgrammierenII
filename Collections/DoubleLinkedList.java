@@ -40,13 +40,17 @@ public class DoubleLinkedList<T> {
         if (first.data.equals(key)){
             first = first.next;
             first.prev = null;
+            size--;
             return;
         } else if (last.data.equals(key)){
             last = last.prev;
             last.next = null;
+            size--;
+            return;
         }
 
-        while(!selectedNode.data.equals(key)) selectedNode = selectedNode.next;
+        while(selectedNode != null && !selectedNode.data.equals(key)) selectedNode = selectedNode.next;
+        if (selectedNode == null) return;
         selectedNode.next.prev = selectedNode.prev;
         selectedNode.prev.next = selectedNode.next;
         size--;

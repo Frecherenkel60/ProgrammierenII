@@ -8,9 +8,9 @@ public class CollectionMain {
         // testQueue();
         // testStack();
         // testLinkedList();
-        // testDoubleLinkedList();
+        testDoubleLinkedList();
         // testBinaryTree();
-        testBinaryRemove();
+        // testBinaryRemove();
     }
 
     private static void testBinaryRemove() {
@@ -91,6 +91,7 @@ public class CollectionMain {
         }
 
         System.out.println();
+        linkedList.remove("to meet you!");
 
         linkedList.insert("Mf!", 2);
         size = linkedList.size();
