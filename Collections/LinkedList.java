@@ -25,12 +25,10 @@ public class LinkedList <T> {
         if (index >= size || index < 0) throw new IndexOutOfBoundsException();
         var newNode = new Node<T>(data);
         var prevNode = first;
-        Node<T> nextNode = null;
 
         while(--index != 0) prevNode = prevNode.next;
-        nextNode = prevNode.next;
+        newNode.next = prevNode.next;
         prevNode.next = newNode;
-        newNode.next = nextNode;
         size++;
     }
 
@@ -62,6 +60,16 @@ public class LinkedList <T> {
 
         while(index-- != 0) indexNode = indexNode.next;
         return indexNode.data;
+    }
+
+    public boolean contains(T data){
+        var indexNode = first;
+
+        while (indexNode != null){
+            if (indexNode.data == data) return true;
+            indexNode = indexNode.next;
+        }
+        return false;
     }
 
     public int size(){
