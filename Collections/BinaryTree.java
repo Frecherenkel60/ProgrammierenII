@@ -1,12 +1,12 @@
 package Collections;
 
-public class BinaryTree {
+public class BinaryTree<T> {
 
-    private Node root;
+    private Node<T> root;
     private int size = 0;
 
-    public void add(int data){
-        var newNode = new Node(data);
+    public void add(T data){
+        var newNode = new Node<T>(data);
 
         if (root == null){
             root = newNode;
@@ -17,26 +17,30 @@ public class BinaryTree {
 
     }
 
-    private Node add(Node currentNode, Node newNode){
+    private Node<T> add(Node<T> currentNode, Node<T> newNode){
         if (currentNode == null){
             this.size++;
             return newNode;
         } 
 
-        if (currentNode.data < newNode.data){
+        var compareToResult = ((Comparable)currentNode.data).compareTo((Comparable)newNode.data);
+
+        if (compareToResult < 0){
             currentNode.right = add(currentNode.right, newNode);
-        } else if (currentNode.data > newNode.data){
+        } else if (compareToResult > 0){
             currentNode.left = add(currentNode.left, newNode);
+        } else if (compareToResult == 0) {
+            return currentNode;
         }
 
         return currentNode;
     }
 
-    public void remove(int key){
+    public void remove(T key){
         
     }
 
-    private void remove(Node currentNode, Node selectedNode){
+    private void remove(Node<T> currentNode, Node<T> selectedNode){
 
     }
 
@@ -45,7 +49,7 @@ public class BinaryTree {
         traverseInOrder(root);
     }
 
-    private void traverseInOrder(Node currentNode){
+    private void traverseInOrder(Node<T> currentNode){
         if (currentNode.left != null) traverseInOrder(currentNode.left);
         System.out.print(currentNode.data + ", ");
         if (currentNode.right != null) traverseInOrder(currentNode.right);
@@ -56,7 +60,7 @@ public class BinaryTree {
         traversePreOrder(root);
     }
 
-    private void traversePreOrder(Node currentNode){
+    private void traversePreOrder(Node<T> currentNode){
         System.out.print(currentNode.data + ", ");
         if (currentNode.left != null) traversePreOrder(currentNode.left);
         if (currentNode.right != null) traversePreOrder(currentNode.right);
@@ -67,20 +71,20 @@ public class BinaryTree {
         traversePostOrder(root);
     }
 
-    private void traversePostOrder(Node currentNode){
+    private void traversePostOrder(Node<T> currentNode){
         if (currentNode.left != null) traversePostOrder(currentNode.left);
         if (currentNode.right != null) traversePostOrder(currentNode.right);
         System.out.print(currentNode.data + ", ");
     }
 
     // Internal data structure -> Node
-    private class Node {
+    private class Node<T> {
         
-        private int data;
-        private Node left;
-        private Node right;
+        private T data;
+        private Node<T> left;
+        private Node<T> right;
 
-        Node(int data){
+        Node(T data){
             this.data = data;
             left = null;
             right = null;

@@ -13,7 +13,7 @@ public class CollectionMain {
     }
 
     private static void testBinaryTree() {
-        var tree = new BinaryTree();
+        var tree = new BinaryTree<Integer>();
 
         Random r = new Random();
 
