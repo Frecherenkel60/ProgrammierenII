@@ -6,6 +6,40 @@ public class CollectionMain {
         // testQueue();
         // testStack();
         // testLinkedList();
+        testDoubleLinkedList();
+    }
+
+    private static void testDoubleLinkedList() {
+        var linkedList = new DoubleLinkedList<String>();
+
+        linkedList.add("Hello");
+        linkedList.add("there!");
+        linkedList.add("It's");
+        linkedList.add("so");
+        linkedList.add("nice");
+        linkedList.add("to meet you!");
+
+        var size = linkedList.size();
+        for(int i = 0; i < size; i++){
+            System.out.println(linkedList.get(i));
+        }
+
+        System.out.println();
+
+        linkedList.remove("so");
+        linkedList.remove(1);
+        size = linkedList.size();
+        for (int i = 0; i < size; i++){
+            System.out.println(linkedList.get(i));
+        }
+
+        System.out.println();
+
+        linkedList.insert("Mf!", 2);
+        size = linkedList.size();
+        for (int i = 0; i < size; i++){
+            System.out.println(linkedList.get(i));
+        }
     }
 
     private static void testLinkedList() {
