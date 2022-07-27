@@ -47,7 +47,8 @@ public class LinkedList <T> {
             return;
         }
 
-        while(!prevNode.next.data.equals(key)) prevNode = prevNode.next;
+        while(prevNode.next != null && !prevNode.next.data.equals(key)) prevNode = prevNode.next;
+        if (prevNode.next == null) return;
         prevNode.next = prevNode.next.next;
         size--;
     }
