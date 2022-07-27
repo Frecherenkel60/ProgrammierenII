@@ -42,7 +42,7 @@ public class BinaryTree<T> {
     }
 
     private Node<T> remove(Node<T> currentNode, T selectedNode){
-        var compareToResult = ((Comparable) currentNode.data).compareTo(selectedNode);
+        var compareToResult = ((Comparable<T>) currentNode.data).compareTo(selectedNode);
 
         if (compareToResult < 0){
             currentNode.right = remove(currentNode.right, selectedNode);
@@ -52,7 +52,8 @@ public class BinaryTree<T> {
             // correct node
             if (currentNode.left == null) return currentNode.right;
             if (currentNode.right == null) return currentNode.left;
-            // need to find the most-less value on the right side
+            // node has two children
+            // we need to find the most-less value on the right side
             var traverseNode = currentNode.right;
             while (traverseNode.left != null) traverseNode = traverseNode.left;
             currentNode.data = traverseNode.data;
