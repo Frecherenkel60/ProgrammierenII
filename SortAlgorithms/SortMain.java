@@ -11,7 +11,18 @@ public class SortMain {
         var list = Arrays.asList(new Integer[]{15, 1, 13, 12, 4, 6, 2, 239, 21, 25, 17});
 
         // testBubbleSort(list);
-        testSelectionSort(list);
+        // testSelectionSort(list);
+        testQuickSort(list);
+    }
+
+    private static void testQuickSort(List<Integer> list) {
+        var sorter = new quickSort<Integer>();
+
+        System.out.println("Unsorted: ");
+        list.forEach(x -> System.out.print(x + ", "));
+        sorter.sort(list);
+        System.out.println("\nSorted: ");
+        list.forEach(x -> System.out.print(x + ", "));
     }
 
     private static void testBubbleSort(List<Integer> list) {
