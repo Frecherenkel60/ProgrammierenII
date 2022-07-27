@@ -5,18 +5,21 @@ import java.util.List;
 class quickSort<T> implements Sorter<T> {
 
     @Override
-    public List<T> sort(List<T> unsortedList) {
-        // TODO Auto-generated method stub
-        return quickSort(unsortedList, 0,  unsortedList.size()-1);
+    public void sort(List<T> unsortedList) {
+        var start = System.nanoTime();
+        quickSort(unsortedList, 0,  unsortedList.size()-1);
+        var end = System.nanoTime();
+        var duration = end - start;
+        var ms = (long) (duration / 10e5);
+        System.out.println("\nRuntime-Duration: " + (end-start) + "ns" + " // " + ms + "ms");
     }
 
-    private List<T> quickSort(List<T> list, int low, int high){
+    private void quickSort(List<T> list, int low, int high){
         if (low < high){
             var pi = partition(list, low, high); // get partition index
             quickSort(list, low, pi - 1); // partition left side
             quickSort(list, pi + 1, high); // partition right side
         }
-        return list;
     }
 
     private int partition(List<T> list, int low, int high){

@@ -5,7 +5,8 @@ import java.util.List;
 public class selectionSort<T> implements Sorter<T> {
 
     @Override
-    public List<T> sort(List<T> unsortedList) {
+    public void sort(List<T> unsortedList) {
+        var start = System.nanoTime();
         var length = unsortedList.size();
 
         for(int i = 0; i < length; i++){
@@ -24,6 +25,9 @@ public class selectionSort<T> implements Sorter<T> {
             unsortedList.set(idx, temp);
         }
 
-        return null;
+        var end = System.nanoTime();
+        var duration = end - start;
+        var ms = (long) (duration / 10e5);
+        System.out.println("\nRuntime-Duration: " + (end-start) + "ns" + " // " + ms + "ms");
     }
 }
