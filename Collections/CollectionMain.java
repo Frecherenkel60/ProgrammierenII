@@ -8,9 +8,25 @@ public class CollectionMain {
         // testQueue();
         // testStack();
         // testLinkedList();
-        testDoubleLinkedList();
+        // testDoubleLinkedList();
         // testBinaryTree();
         // testBinaryRemove();
+        testToString();
+    }
+
+    private static void testToString() {
+        var tree = new BinaryTree<String>();
+
+        tree.add("Justus");
+        tree.add("Gabi");
+        tree.add("Adam");
+        tree.add("Ina");
+        tree.add("Hans");
+        tree.add("Isa");
+        tree.add("Vicki");
+        tree.add("Dori");
+
+        System.out.println(tree.toString());
     }
 
     private static void testBinaryRemove() {

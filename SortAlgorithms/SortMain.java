@@ -10,8 +10,8 @@ public class SortMain {
         var list = new ArrayList<Integer>();
         var rdm = new Random();
 
-        for (int i = 0; i < 100; i++){
-            list.add(rdm.nextInt(1000));
+        for (int i = 0; i < 10000; i++){
+            list.add(rdm.nextInt(25000));
         }
 
         testBubbleSort(list);
@@ -25,10 +25,10 @@ public class SortMain {
         System.out.println("\n\nQuickSort!");
 
         System.out.println("Unsorted: ");
-        list.forEach(x -> System.out.print(x + ", "));
+        //list.forEach(x -> System.out.print(x + ", "));
         sorter.sort(list);
         System.out.println("\nSorted: ");
-        list.forEach(x -> System.out.print(x + ", "));
+        //list.forEach(x -> System.out.print(x + ", "));
     }
 
     private static void testBubbleSort(List<Integer> list) {
@@ -37,10 +37,10 @@ public class SortMain {
         System.out.println("\n\nBubbleSort!");
 
         System.out.println("Unsorted: ");
-        list.forEach(x -> System.out.print(x + ", "));
+        //list.forEach(x -> System.out.print(x + ", "));
         sorter.sort(list);
         System.out.println("\nSorted: ");
-        list.forEach(x -> System.out.print(x + ", "));
+        //list.forEach(x -> System.out.print(x + ", "));
     }
 
     private static void testSelectionSort(List<Integer> list) {
@@ -49,10 +49,10 @@ public class SortMain {
         System.out.println("\n\nSelectionSort!");
 
         System.out.println("Unsorted: ");
-        list.forEach(x -> System.out.print(x + ", "));
+        //list.forEach(x -> System.out.print(x + ", "));
         sorter.sort(list);
         System.out.println("\nSorted: ");
-        list.forEach(x -> System.out.print(x + ", "));
+        //list.forEach(x -> System.out.print(x + ", "));
     }
 
 }
