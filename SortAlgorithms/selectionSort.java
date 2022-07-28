@@ -14,7 +14,7 @@ public class selectionSort<T> extends Sorter<T> {
             var idx = i;
 
             for(int j = length - 1; j > i; j--){
-                var compareToResult = ((Comparable)unsortedList.get(j)).compareTo((Comparable)minVal);
+                var compareToResult = ((Comparable<T>)unsortedList.get(j)).compareTo(minVal);
                 if (compareToResult >= 0) continue;
                 minVal = unsortedList.get(j);
                 idx = j;

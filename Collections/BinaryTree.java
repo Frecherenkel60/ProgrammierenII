@@ -23,7 +23,7 @@ public class BinaryTree<T> {
             return newNode;
         }
 
-        var compareToResult = ((Comparable) currentNode.data).compareTo((Comparable) newNode.data);
+        var compareToResult = ((Comparable<T>) currentNode.data).compareTo(newNode.data);
 
         if (compareToResult < 0) {
             currentNode.right = add(currentNode.right, newNode);

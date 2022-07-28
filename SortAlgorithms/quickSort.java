@@ -26,7 +26,7 @@ public class quickSort<T> extends Sorter<T> {
 
         for (int j = low; j < high; j++){
             // compare each element with pivot element
-            if (((Comparable)list.get(j)).compareTo((Comparable)pivot) <= 0){
+            if (((Comparable<T>)list.get(j)).compareTo(pivot) <= 0){
                 // if smaller element is found swap it with the greater element
                 var temp = list.get(++i);
                 list.set(i, list.get(j));

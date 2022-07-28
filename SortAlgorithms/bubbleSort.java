@@ -12,7 +12,7 @@ public class bubbleSort<T> extends Sorter<T> {
         for (int i = 0; i < length; i++){
             var changes = 0;
             for (int j = 0; j < length - i - 1; j++){
-                var compareToResult = ((Comparable)unsortedList.get(j)).compareTo((Comparable)unsortedList.get(j+1));
+                var compareToResult = ((Comparable<T>)unsortedList.get(j)).compareTo(unsortedList.get(j+1));
 
                 if (compareToResult <= 0) continue;
                 var temp = unsortedList.get(j);
