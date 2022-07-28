@@ -1,5 +1,6 @@
 package Collections;
 
+@SuppressWarnings("all")
 public class Stack<T> {
 
     private Node<T> top;

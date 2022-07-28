@@ -1,5 +1,6 @@
 package Collections;
 
+@SuppressWarnings("all")
 public class BinaryTree<T> {
 
     private Node<T> root;

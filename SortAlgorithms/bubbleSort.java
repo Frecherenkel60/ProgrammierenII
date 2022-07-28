@@ -2,6 +2,7 @@ package SortAlgorithms;
 
 import java.util.List;
 
+@SuppressWarnings("all")
 public class bubbleSort<T> extends Sorter<T> {
 
     @Override

@@ -2,6 +2,7 @@ package Collections;
 
 import java.util.Random;
 
+@SuppressWarnings("all")
 public class CollectionMain {
 
     public static void main(String[] args) {

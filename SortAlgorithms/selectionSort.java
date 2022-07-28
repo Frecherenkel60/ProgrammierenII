@@ -2,6 +2,7 @@ package SortAlgorithms;
 
 import java.util.List;
 
+@SuppressWarnings("all")
 public class selectionSort<T> extends Sorter<T> {
 
     @Override
