@@ -2,16 +2,14 @@ package SortAlgorithms;
 
 import java.util.List;
 
-class quickSort<T> implements Sorter<T> {
+public class quickSort<T> extends Sorter<T> {
 
     @Override
     public void sort(List<T> unsortedList) {
         var start = System.nanoTime();
         quickSorting(unsortedList, 0,  unsortedList.size()-1);
         var end = System.nanoTime();
-        var duration = end - start;
-        var ms = (long) (duration / 10e5);
-        System.out.println("\nRuntime-Duration: " + (end-start) + "ns" + " // " + ms + "ms");
+        printDuration(start, end);
     }
 
     private void quickSorting(List<T> list, int low, int high){

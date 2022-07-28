@@ -2,7 +2,7 @@ package SortAlgorithms;
 
 import java.util.List;
 
-public class bubbleSort<T> implements Sorter<T> {
+public class bubbleSort<T> extends Sorter<T> {
 
     @Override
     public void sort(List<T> unsortedList) {
@@ -21,9 +21,7 @@ public class bubbleSort<T> implements Sorter<T> {
         }
 
         var end = System.nanoTime();
-        var duration = end - start;
-        var ms = (long) (duration / 10e5);
-        System.out.println("\nRuntime-Duration: " + (end-start) + "ns" + " // " + ms + "ms");
+        printDuration(start, end);
     }
     
 }
