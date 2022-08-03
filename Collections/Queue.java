@@ -1,5 +1,6 @@
 package Collections;
 
+@SuppressWarnings("all")
 public class Queue <T> {
 
     private Node<T> first;
